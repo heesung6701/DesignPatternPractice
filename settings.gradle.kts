@@ -9,3 +9,4 @@ include("abstract-factory-pattern:ui-web")
 findProject(":abstract-factory-pattern:ui-web")?.name = "ui-web"
 include("abstract-factory-pattern:ui-ios")
 findProject(":abstract-factory-pattern:ui-ios")?.name = "ui-ios"
+include("builder")
