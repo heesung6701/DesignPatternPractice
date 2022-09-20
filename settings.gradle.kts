@@ -11,3 +11,4 @@ include("abstract-factory-pattern:ui-ios")
 findProject(":abstract-factory-pattern:ui-ios")?.name = "ui-ios"
 include("builder")
 include("adapter")
+include("prototype")
