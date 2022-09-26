@@ -24,12 +24,11 @@ fun main() {
 object MenuManager {
     private val history = HashMap<String, Menu>()
 
-    fun getMenu(name: String) = history[name] ?: object : Menu {
-        private val _price = calculatePrice(name)
-        override fun getName(): String = name
-        override fun getPrice(): Int = _price
-    }.apply {
-        history[name] = this
+    fun getMenu(name: String): Menu {
+        val origin = history[name] ?: CustomMenu(name, calculatePrice(name)).apply {
+            history[name] = this
+        }
+        return origin.copy()
     }
 
     fun putMenu(menu: Menu) {
